@@ -56,6 +56,7 @@ struct PreferencesView: View {
                     Text("1 hour").tag(60)
                     Text("2 hours").tag(120)
                     Text("5 hours").tag(300)
+                    Text("8 hours").tag(480)
                     Text("Indefinitely").tag(0)
                 }
                 .pickerStyle(.menu)
@@ -124,7 +125,9 @@ struct PreferencesView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     PreferencesView(viewModel: CaffeineViewModel())
         .environment(\.locale, .init(identifier: "en"))
 }
+#endif
